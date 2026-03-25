@@ -25,13 +25,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-card/80 backdrop-blur-xl shadow-sm border-b border-border/50"
-          : "bg-transparent"
-      }`}
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl shadow-sm border-b border-gray-100">
       <div className="px-6 h-16 flex items-center justify-between">
         <a
           href="#hero"
@@ -39,7 +33,7 @@ export default function Navbar() {
             e.preventDefault();
             handleClick("#hero");
           }}
-          className="text-lg font-bold tracking-tight text-foreground"
+          className="text-lg font-bold tracking-tight text-gray-900"
         >
           {"<Dev />"}
         </a>
@@ -54,7 +48,7 @@ export default function Navbar() {
                 e.preventDefault();
                 handleClick(link.href);
               }}
-              className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-secondary/60"
+              className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors rounded-lg hover:bg-gray-100"
             >
               {link.label}
             </a>
