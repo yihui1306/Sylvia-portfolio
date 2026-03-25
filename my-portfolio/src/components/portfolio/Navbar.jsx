@@ -32,7 +32,7 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="px-6 h-16 flex items-center justify-between">
         <a
           href="#hero"
           onClick={(e) => {

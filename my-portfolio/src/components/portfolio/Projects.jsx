@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Award } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import SectionHeading from "./SectionHeading";
 
 const projects = [
@@ -87,15 +86,10 @@ export default function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 h-8 px-3 rounded-full border border-border text-xs font-medium text-foreground bg-background hover:bg-secondary/60 transition-colors"
                   >
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="rounded-full text-xs gap-1.5"
-                    >
-                      <Github className="w-3.5 h-3.5" />
-                      Code
-                    </Button>
+                    <Github className="w-3.5 h-3.5" />
+                    Code
                   </a>
                 )}
                 {project.demo && (
@@ -103,11 +97,10 @@ export default function Projects() {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 h-8 px-3 rounded-full bg-primary text-primary-foreground text-xs font-medium hover:bg-primary/90 transition-colors"
                   >
-                    <Button size="sm" className="rounded-full text-xs gap-1.5">
-                      <ExternalLink className="w-3.5 h-3.5" />
-                      Live Demo
-                    </Button>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    Live Demo
                   </a>
                 )}
               </div>
