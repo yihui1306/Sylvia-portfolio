@@ -15,11 +15,17 @@ export default function SectionHeading({ label, title, description }) {
           {label}
         </span>
       )}
-      <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+      <h2
+        className="text-4xl sm:text-5xl font-bold tracking-tight"
+        style={{ color: "#000000ff" }}
+      >
         {title}
       </h2>
       {description && (
-        <p className="text-muted-foreground mt-3 max-w-xl mx-auto leading-relaxed">
+        <p
+          className="mt-3 max-w-xl mx-auto leading-relaxed text-lg"
+          style={{ color: "#4a6fa5" }}
+        >
           {description}
         </p>
       )}

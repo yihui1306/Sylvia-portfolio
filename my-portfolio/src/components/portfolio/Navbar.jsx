@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "../../assets/logo.png";
 
 const navLinks = [
   { label: "About", href: "#hero" },
@@ -25,20 +26,21 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl shadow-sm border-b border-gray-100">
-      <div className="px-6 h-16 flex items-center justify-between">
+    <nav className="fixed top-0 left-0 right-0 z-50">
+      <div
+        className="px-6 h-14 flex items-center justify-between shadow-md"
+        style={{ backgroundColor: "#bde0fe" }}
+      >
         <a
           href="#hero"
           onClick={(e) => {
             e.preventDefault();
             handleClick("#hero");
           }}
-          className="text-lg font-bold tracking-tight text-gray-900"
         >
-          {"<Dev />"}
+          <img src={logo} alt="Logo" className="h-8 w-auto" />
         </a>
 
-        {/* Desktop */}
         <div className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
             <a
@@ -48,16 +50,15 @@ export default function Navbar() {
                 e.preventDefault();
                 handleClick(link.href);
               }}
-              className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors rounded-lg hover:bg-gray-100"
+              className="px-4 py-2 text-sm font-medium text-gray-900 hover:text-gray-600 transition-colors rounded-full hover:bg-white/40"
             >
               {link.label}
             </a>
           ))}
         </div>
 
-        {/* Mobile toggle */}
         <button
-          className="md:hidden p-2 text-foreground"
+          className="md:hidden p-2 text-gray-900"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? (
@@ -68,14 +69,14 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-card/95 backdrop-blur-xl border-b border-border overflow-hidden"
+            className="mt-2 rounded-2xl overflow-hidden shadow-md"
+            style={{ backgroundColor: "#bde0fe" }}
           >
             <div className="px-6 py-4 space-y-1">
               {navLinks.map((link) => (
@@ -86,7 +87,7 @@ export default function Navbar() {
                     e.preventDefault();
                     handleClick(link.href);
                   }}
-                  className="block px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/60 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-sm font-medium text-gray-900 hover:bg-white/40 rounded-xl transition-colors"
                 >
                   {link.label}
                 </a>
