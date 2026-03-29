@@ -73,13 +73,16 @@ export default function HeroSection() {
           className="space-y-6 text-left"
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-300 text-sm font-medium text-slate-700">
+          <div
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium text-white"
+            style={{ backgroundColor: "#f5a905ff" }}
+          >
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             Open to work
           </div>
 
           {/* Headline */}
-          <div className="space-y-4">
+          <div className="space-y-2">
             <h1
               className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-800 leading-tight"
               style={{ fontFamily: "'Times New Roman', Times, serif" }}
@@ -115,9 +118,9 @@ export default function HeroSection() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="hidden md:flex items-center justify-center"
+          className="flex items-center justify-center"
         >
-          <div className="w-96 h-96 rounded-2xl overflow-hidden shadow-2xl">
+          <div className="w-80 h-80 rounded-2xl overflow-hidden shadow-2xl">
             <img
               src={portfolioPicture}
               alt="Sylvia Li"

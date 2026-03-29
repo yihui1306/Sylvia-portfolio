@@ -82,6 +82,11 @@ export default function Projects() {
           description="Things I've built and credentials I've earned along the way."
         />
 
+        <h3 className="text-xl font-semibold text-slate-800 mb-6 flex items-center gap-2">
+          <Award className="w-5 h-5 text-slate-600" />
+          Projects
+        </h3>
+
         {/* Project cards */}
         <motion.div
           initial="hidden"

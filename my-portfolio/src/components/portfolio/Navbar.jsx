@@ -22,7 +22,9 @@ export default function Navbar() {
 
   const handleClick = (href) => {
     setMobileOpen(false);
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    setTimeout(() => {
+      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
   };
 
   return (
@@ -75,7 +77,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="mt-2 rounded-2xl overflow-hidden shadow-md"
+            className="overflow-hidden shadow-md"
             style={{ backgroundColor: "#bde0fe" }}
           >
             <div className="px-6 py-4 space-y-1">
